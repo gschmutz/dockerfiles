@@ -1,0 +1,77 @@
+# LICENSE CDDL 1.0 + GPL 2.0
+#
+# TRIVADS DOCKERFILES PROJECT
+# ---------------------------
+# This is the Dockerfile for Oracle Stream Explorer 12.1.3 (Full) Generic Distribution
+#
+# Credits to Bruno Borges who created the Docker weblogic Dockerfile and where this Dockerfile is based on. 
+# 
+# REQUIRED BASE IMAGE TO BUILD THIS IMAGE
+# ---------------------------------------
+# Make sure you have oraclelinux:7.0 Docker image installed.
+# Visit for more info: 
+#  - http://public-yum.oracle.com/docker-images/
+#
+# REQUIRED FILES TO BUILD THIS IMAGE
+# ----------------------------------
+# Download the following files and place them into the downloads subfolder
+#
+# (1) ofm_integration_osa_12.2.1.0.0_disk1.zip
+#     Download the Oracle Stream Analytics Runtime from http://www.oracle.com/technetwork/middleware/complex-event-processing/downloads/index.html
+#
+# (3) jdk-8u91-linux-x64.rpm
+#     Download JDK from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+#
+# HOW TO BUILD THIS IMAGE
+# -----------------------
+# Put all downloaded files into the downloads sub-directory.
+# To build the image, run: 
+#      $ docker build -t gschmutz/oracle-osa:12.2.1 . 
+# To start a container, run: 
+#      $ docker run -d -p 9002:9002 gschmutz/oracle-osa:12.2.1 
+#
+# Pull base image
+# ---------------
+FROM oraclelinux:latest
+
+# Maintainer
+# ----------
+MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
+
+# Environment variables required for this build (do NOT change)
+# -------------------------------------------------------------
+ENV JAVA_PKG=server-jre-8u*-linux-x64.tar.gz \
+	JAVA_HOME=/usr/java/default \
+    PATH=$PATH:/usr/java/default/bin \
+    ORACLE_HOME=/u01/oracle \
+    OSA_PKG=ofm_integration_osa_12.2.1.0.0_disk1.zip \
+    OSA_JAR=fmw_12.2.1.0.0_osa_generic.jar \
+    OSA_FOLDER=ofm_integration_osa_12.2.1.0.0_disk1
+
+# Install and configure Java
+# --------------------------
+ADD downloads/$JAVA_PKG /usr/java/
+RUN mv $(ls -1 -d /usr/java/*) $JAVA_HOME 
+
+# Copy packages
+# -------------
+COPY downloads/$OSA_PKG setup/install.file setup/oraInst.loc /u01/
+
+
+# Setup filesystem and oracle user
+# Install and configure Oracle JDK
+# Adjust file permissions, go to /u01 as user 'oracle' to proceed with WLS installation
+# ------------------------------------------------------------
+RUN chmod a+xr /u01 && \
+	useradd -b /u01 -m -s /bin/bash oracle && \
+	echo oracle:oracle | chpasswd && \
+	cd /u01 && $JAVA_HOME/bin/jar xf /u01/$OSA_PKG && cd - && \
+	su -c "$JAVA_HOME/bin/java -jar /u01/$OSA_JAR -silent -responseFile /u01/install.file -invPtrLoc /u01/oraInst.loc -jreLoc $JAVA_HOME" - oracle && \
+    chown oracle:oracle -R /u01 && \
+    rm /u01/$OSA_JAR /u01/$OSA_PKG /u01/oraInst.loc /u01/install.file
+
+USER oracle
+WORKDIR $ORACLE_HOME 
+
+# Define default command to start bash. 
+CMD ["bash"]
