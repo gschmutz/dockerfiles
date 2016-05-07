@@ -5,7 +5,7 @@ This is a Dockerfile for [Oracle Stream Analytics 12c](http://www.oracle.com/tec
 **IMPORTANT**: Oracle **does not support Docker** in any environment, including but not limited to Development, Integration, and Production environments.
 
 ## How to build and run
-This project offers sample Dockerfiles for Oracle Stream Analytics 12c (12.2.1), and for each version it also provides at least one Dockerfile for the 'developer' distribution and a second Dockerfile for the 'generic' distribution, as well more if necessary. To assist in building the images, you can use the [buildDockerImage.sh](dockerfiles/buildDockerImage.sh) script. See below for instructions and usage.
+This project offers sample Dockerfiles for Oracle Stream Analytics 12c (12.2.1), and for each version it also provides at least one Dockerfile for the 'standalone' distribution and a second Dockerfile for the 'spark' distribution (not yet available), as well more if necessary. To assist in building the images, you can use the [buildDockerImage.sh](dockerfiles/buildDockerImage.sh) script. See below for instructions and usage.
 
 The `buildDockerImage.sh` script is just a utility shell script that performs MD5 checks and is an easy way for beginners to get started. Expert users are welcome to directly call `docker build` with their prefered set of parameters.
 
@@ -35,22 +35,22 @@ Before you build, choose which version and distribution you want to build an ima
 **IMPORTANT:** the resulting images will NOT have a domain pre-configured. You must extend the image with your own Dockerfile. You might take a look at the use case samples as well below.
 
 ## Samples for Oracle Stream Analytics Domain Creation
-To give users an idea on how to create a domain from a custom Dockerfile to extend the WebLogic image, we provide a few samples for 12c versions for the Developer distribution. For an example on **12.2.1**, you can use the sample inside [samples/1221-domain](samples/1221-domain) folder. 
+To give users an idea on how to create a domain from a custom Dockerfile to extend the WebLogic image, we provide a few samples for 12c versions for the Standalone distribution. For an example on **12.2.1**, you can use the sample inside [samples/1221-domain](samples/1221-domain) folder. 
 
 ### Sample Domain for Oracle Stream Analytics 12.2.1
-This [Dockerfile](samples/1221-domain/Dockerfile) will create an image by extending **oracle/weblogic:12.2.1-developer**. It will configure a **osa_domain** with the following settings:
+This [Dockerfile](samples/1221-domain/Dockerfile) will create an image by extending **oracle/weblogic:12.2.1-standalone**. It will configure a **osa_domain** with the following settings:
 
  * Username: `osaadmin`
  * Password: provided by `ADMIN_PASSWORD` 
  * WebLogic Domain Name: `osa_domain`
  * Admin Server on port: `9002`
 
-Make sure you first build the Oracle Stream Analytcis 12.2.1 Image with **-A** to get the Developer Image.
+Make sure you first build the Oracle Stream Analytcis 12.2.1 Image with **-A** to get the Standalone Image.
 
 ## Building a sample Docker Image of a WebLogic Domain
 To try a sample of a WebLogic image with a domain configured, follow the steps below:
 
-  1. Make sure you have **oracle/oracle-osa:12.2.1-developer** image built. If not go into **dockerfiles** and call 
+  1. Make sure you have **oracle/oracle-osa:12.2.1-standalone** image built. If not go into **dockerfiles** and call 
 
         $ sh buildDockerImage.sh -v 12.2.1 -A
 
