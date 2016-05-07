@@ -57,7 +57,7 @@ To try a sample of a WebLogic image with a domain configured, follow the steps b
   2. Go to folder **samples/1221-domain**
   3. Run the following command: 
 
-        $ docker build -t 1221-domain --build-arg ADMIN_PASSWORD=<define> .
+        $ docker build -t 1221-domain --build-arg OSA_PASSWORD=<define> .
 
   4. Verify you now have this image in place with 
 
