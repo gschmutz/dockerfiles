@@ -14,7 +14,7 @@ The `buildDockerImage.sh` script is just a utility shell script that performs MD
 
 Before you build, choose which version and distribution you want to build an image of, then download the required packages (see .download files) and drop them in the folder of your distribution version of choice. Then go into the **dockerfiles** folder and run the **buildDockerImage.sh** script as root.
 
-        $ sh buildDockerImage.sh -h
+	$ sh buildDockerImage.sh -h
 	Usage: buildDockerImage.sh -v [version] [-A | -B] [-s] [-c]
 	Builds a Docker Image for Oracle Stream Analytics.
   
