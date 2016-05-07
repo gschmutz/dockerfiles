@@ -1,6 +1,6 @@
 # Oracle Stream Analytics (12c) on Docker
 
-This is a Dockerfile for [Oracle Stream Analytics 12c](http://www.oracle.com/technetwork/middleware/complex-event-processing/documentation/index.html). The purpose of this Docker container is to facilitate the setup of development and integration testing environments for developers.
+This is a Dockerfile for [Oracle Stream Analytics 12c](http://www.oracle.com/technetwork/middleware/complex-event-processing/overview/index.html). The purpose of this Docker container is to facilitate the setup of development and integration testing environments for developers.
 
 **IMPORTANT**: Oracle **does not support Docker** in any environment, including but not limited to Development, Integration, and Production environments.
 
