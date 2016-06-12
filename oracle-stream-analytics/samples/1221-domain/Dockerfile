@@ -26,7 +26,7 @@ ARG OSA_PASSWORD
 ENV OSA_DOMAIN_NAME="osa_domain" \
     OSA_DOMAIN_HOME="/u01/oracle/user_projects/domains" \
     OSA_USERNAME="osaadmin" \
-    OSA_PASSWORD=${OSA_PASSWORT:-welcome1} \
+    OSA_PASSWORD=${OSA_PASSWORD:-welcome1} \
     OSA_PORT="9002" \
     OSA_SERVER_NAME="osa_server" \
     CONFIG_JVM_ARGS="-Dweblogic.security.SSL.ignoreHostnameVerification=true" \
