@@ -35,10 +35,10 @@ Before you build, choose which version and distribution you want to build an ima
 **IMPORTANT:** the resulting images will NOT have a domain pre-configured. You must extend the image with your own Dockerfile. You might take a look at the use case samples as well below.
 
 ## Samples for Oracle Stream Analytics Domain Creation
-To give users an idea on how to create a domain from a custom Dockerfile to extend the WebLogic image, we provide a few samples for 12c versions for the Standalone distribution. For an example on **12.2.1**, you can use the sample inside [samples/1221-domain](samples/1221-domain) folder. 
+To give users an idea on how to create a domain from a custom Dockerfile to extend the Oracle Stream Analytics image, we provide a few samples for 12c versions for the Standalone distribution. For an example on **12.2.1**, you can use the sample inside [samples/1221-domain](samples/1221-domain) folder. 
 
 ### Sample Domain for Oracle Stream Analytics 12.2.1
-This [Dockerfile](samples/1221-domain/Dockerfile) will create an image by extending **oracle/weblogic:12.2.1-standalone**. It will configure a **osa_domain** with the following settings:
+This [Dockerfile](samples/1221-domain/Dockerfile) will create an image by extending **oracle/oracle-osa:12.2.1-standalone**. It will configure a **osa_domain** with the following settings:
 
  * Username: `osaadmin`
  * Password: provided by `ADMIN_PASSWORD` 
@@ -47,8 +47,8 @@ This [Dockerfile](samples/1221-domain/Dockerfile) will create an image by extend
 
 Make sure you first build the Oracle Stream Analytcis 12.2.1 Image with **-A** to get the Standalone Image.
 
-## Building a sample Docker Image of a WebLogic Domain
-To try a sample of a WebLogic image with a domain configured, follow the steps below:
+## Building a sample Docker Image of a Oracle Stream Analytics Domain
+To try a sample of a Oracle Stream Analytics image with a domain configured, follow the steps below:
 
   1. Make sure you have **oracle/oracle-osa:12.2.1-standalone** image built. If not go into **dockerfiles** and call 
 
@@ -64,7 +64,7 @@ To try a sample of a WebLogic image with a domain configured, follow the steps b
         $ docker images
 
 ### Running Oracle Stream Analytics server
-To start the Oracle Stream Analytics server, you can simply call **docker run -d 1221-domain** command. The sample Dockerfile defines **startWlevs.sh** as the default CMD.
+To start the Oracle Stream Analytics server, you can simply call **docker run -d 1221-domain** command. The sample Dockerfile defines **startwlevs.sh** as the default CMD.
 
     $ docker run -d --name=osa -p 9002:9002 1221-domain
 
@@ -75,7 +75,9 @@ To download and run Oracle Stream Analytics 12c Distribution regardless of insid
 
 To download and run Oracle JDK regardless of inside or outside a Docker container, you must download the binary from Oracle website and accept the license indicated at that pge.
 
-All scripts and files hosted in this project and GitHub [docker/OracleWebLogic](./) repository required to build the Docker images are, unless otherwise noted, released under the Common Development and Distribution License (CDDL) 1.0 and GNU Public License 2.0 licenses.
+All scripts and files hosted in this project and GitHub repository required to build the Docker images are, unless otherwise noted, released under the Common Development and Distribution License (CDDL) 1.0 and GNU Public License 2.0 licenses.
+
+For all the scripts, the work of Oracle on docker for weblogic has been taken as a base and adapted accordingly.
 
 ## Copyright
 Copyright (c) 2016 Trivadis and/or its affiliates. All rights reserved.
