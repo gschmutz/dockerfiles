@@ -29,6 +29,8 @@ ENV OSA_DOMAIN_NAME="osa_domain" \
     OSA_PASSWORD=${OSA_PASSWORD:-welcome1} \
     OSA_PORT="9002" \
     OSA_SERVER_NAME="osa_server" \
+    DB_SERVER_NAME=${DB_SERVER_NAME:-db} \
+    DB_SERVER_PORT=${DB_SERVER_PORT:-1521} \
     DB_USERNAME=${DB_USERNAME:-osa} \
     DB_PASSWORD=${DB_PASSWORD:-welcome1} \
     CONFIG_JVM_ARGS="-Dweblogic.security.SSL.ignoreHostnameVerification=true" \
