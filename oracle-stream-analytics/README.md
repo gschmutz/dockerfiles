@@ -22,11 +22,11 @@ Before you build, choose which version and distribution you want to build an ima
 	   -v: version to build. Required.
 	       Choose one of: 12.2.1  
 	   -A: creates image based on 'standalone' distribution
-	   -B: creates image based on 'spark' distribution
+	   -B: creates image based on 'spark' distribution (not yet available)
 	   -c: enables Docker image layer cache during build
 	   -s: skips the MD5 check of packages
 
-	* select one distribution only: -a or -b
+	* select one distribution only: -A or -B
         
         LICENSE CDDL 1.0 + GPL 2.0
         
