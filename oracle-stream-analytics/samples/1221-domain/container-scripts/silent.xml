@@ -8,7 +8,7 @@
     <data-value name="DOMAIN_NAME" value="%domainName%" />
     <data-value name="DOMAIN_LOCATION" value="/u01/oracle/user_projects/domains" />
     <data-value name="NETIO_PORT" value="%netioPort%" />
-    <data-value name="KEYSTORE_PASSWORD" value=""%keystorePassword%" /> 
+    <data-value name="KEYSTORE_PASSWORD" value="%keystorePassword%" /> 
     <data-value name="PRIVATEKEY_PASSWORD" value="%privatekeyPassword%" /> 
     <data-value name="DB_URL" value="jdbc:bea:oracle://localhost:1521:XE" />
     <data-value name="DB_USERNAME" value="%db_username%" />
