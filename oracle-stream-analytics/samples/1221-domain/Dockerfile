@@ -29,6 +29,8 @@ ENV OSA_DOMAIN_NAME="osa_domain" \
     OSA_PASSWORD=${OSA_PASSWORD:-welcome1} \
     OSA_PORT="9002" \
     OSA_SERVER_NAME="osa_server" \
+    DB_USERNAME=${DB_USERNAME:-osa} \
+    DB_PASSWORD=${DB_PASSWORD:-welcome1} \
     CONFIG_JVM_ARGS="-Dweblogic.security.SSL.ignoreHostnameVerification=true" \
     PATH=$PATH:/u01/oracle/osa12c/oep/common/bin:/u01/oracle/osa12c/oep/bin:/u01/oracle
 
