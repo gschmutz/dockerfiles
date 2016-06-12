@@ -25,9 +25,9 @@ MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 ARG OSA_PASSWORD
 ENV OSA_DOMAIN_NAME="osa_domain" \
     OSA_DOMAIN_HOME="/u01/oracle/user_projects/domains" \
-    OSA_USERNAME="osaadmin" \
+    OSA_USERNAME=${OSA_USERNAME:-osaadmin} \
     OSA_PASSWORD=${OSA_PASSWORD:-welcome1} \
-    OSA_PORT="9002" \
+    OSA_PORT=${OSA_PORT:-9002} \
     KEYSTORE_PASSWORD=${KEYSTORE_PASSWORD:-welcome1} \
     PRIVATEKEY_PASSWORD=${PRIVATEKEY_PASSWORD:-welcome1} \
     OSA_SERVER_NAME="osa_server" \
