@@ -1,9 +1,6 @@
-
-# WebLogic 12c ZIP Distribution for Developers
-# ===
-# 1. Go to http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-for-dev-1703574.html 
-# 2. Download the Free Oracle WebLogic Server 12c (12.1.3) Zip Distribution and Installers for Developers
-# 3. Drop the downloaded file wls1213_dev_update3.zip in the same folder as this file
+# Download WebLogic Server Quick Installer 12.2.1
 # 
-1997374514	  	ofm_integration_osa_12.2.1.0.0_disk1.zip
-c8aefc3b97328d6f5197315fa6507bbf	server-jre-8u91-linux-x64.tar.gz
+# - http://www.oracle.com/technetwork/middleware/complex-event-processing/downloads/downloads-086608.html 
+#
+56f27954c530f17fa2ee776c755b37e8  ofm_integration_osa_12.2.1.0.0_disk1.zip
+c8aefc3b97328d6f5197315fa6507bbf  server-jre-8u91-linux-x64.tar.gz

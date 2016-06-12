@@ -23,7 +23,7 @@ Parameters:
    -c: enables Docker image layer cache during build
    -s: skips the MD5 check of packages
 
-* select one distribution only: -a or -b
+* select one distribution only: -A or -B
 
 LICENSE CDDL 1.0 + GPL 2.0
 
@@ -36,12 +36,14 @@ exit 0
 # Validate packages
 checksumPackages() {
   echo "Checking if required packages are present and valid..."
+  cd downloads
   md5sum -c Checksum.$DISTRIBUTION
   if [ "$?" -ne 0 ]; then
     echo "MD5 for required packages to build this image did not match!"
-    echo "Make sure to download missing files in folder $VERSION. See *.download files for more information"
+    echo "Make sure to download missing files in folder $VERSION/downloads. See *.download files for more information"
     exit $?
   fi
+  cd ..
 }
 
 if [ "$#" -eq 0 ]; then usage; fi

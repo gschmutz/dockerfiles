@@ -14,7 +14,7 @@
 #
 # Pull base image
 # ---------------
-FROM gschmutz/oracle-osa:12.2.1
+FROM gschmutz/oracle-osa:12.2.1-standalone
 
 # Maintainer
 # ----------
