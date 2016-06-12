@@ -39,7 +39,7 @@
 # 
 #   $ cd samples/1221-domain
 #   $ docker build -t osa -build-arg OSA_PASSWORD=<define> .
-
+#
 # Pull base image
 # ---------------
 FROM oraclelinux:latest
