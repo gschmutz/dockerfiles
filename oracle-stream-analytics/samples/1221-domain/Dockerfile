@@ -22,7 +22,18 @@ MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 
 # WLS Configuration
 # ----------------------------------------------------------
-ARG OSA_PASSWORD
+ARG OSA_PASSWORD \
+    OSA_USERNAME \
+    OSA_PASSWORD \
+    OSA_PORT \
+    KEYSTORE_PASSWORD \
+    PRIVATEKEY_PASSWORD \ 
+    DB_SERVER_NAME \
+    DB_SERVER_PORT \
+    DB_SERVER_SERVICE \
+    DB_USERNAME \
+    DB_PASSWORD
+    
 ENV OSA_DOMAIN_NAME="osa_domain" \
     OSA_DOMAIN_HOME="/u01/oracle/user_projects/domains" \
     OSA_USERNAME=${OSA_USERNAME:-osaadmin} \
