@@ -10,7 +10,7 @@
     <data-value name="NETIO_PORT" value="%netioPort%" />
     <data-value name="KEYSTORE_PASSWORD" value="%keystorePassword%" /> 
     <data-value name="PRIVATEKEY_PASSWORD" value="%privatekeyPassword%" /> 
-    <data-value name="DB_URL" value="jdbc:oracle:thin:@//%dbServerName%:%dbServerPort%/%dbServerService%" />
+    <data-value name="DB_URL" value="jdbc:oracle:thin:@%dbServerName%:%dbServerPort%:%dbServerService%" />
     <data-value name="DB_USERNAME" value="%dbUsername%" />
     <data-value name="DB_PASSWORD" value="%dbPassword%" />
   </input-fields>
