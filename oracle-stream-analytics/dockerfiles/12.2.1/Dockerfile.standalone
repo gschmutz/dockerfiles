@@ -54,9 +54,9 @@ ENV JAVA_PKG=server-jre-8u*-linux-x64.tar.gz \
 	JAVA_HOME=/usr/java/default \
     PATH=$PATH:/usr/java/default/bin \
     ORACLE_HOME=/u01/oracle \
-    OSA_PKG=ofm_integration_osa_12.2.1.0.0_disk1.zip \
-    OSA_JAR=fmw_12.2.1.0.0_osa_generic.jar \
-    OSA_FOLDER=ofm_integration_osa_12.2.1.0.0_disk1
+    OSA_PKG=fmw_12.2.1.1.0_osa_Disk1_1of1.zip \
+    OSA_JAR=fmw_12.2.1.1.0_osa.jar \
+    OSA_FOLDER=fmw_12.2.1.1.0_osa_Disk1_1of1
 
 # Install and configure Java
 # --------------------------

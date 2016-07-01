@@ -24,7 +24,6 @@ MAINTAINER Guido Schmutz <guido.schmutz@trivadis.com>
 # ----------------------------------------------------------
 ARG OSA_PASSWORD
 ARG OSA_USERNAME
-ARG OSA_PASSWORD
 ARG OSA_PORT
 ARG KEYSTORE_PASSWORD
 ARG PRIVATEKEY_PASSWORD 
